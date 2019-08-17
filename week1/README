@@ -1,0 +1,14 @@
+Project 1.a
+Use a terminal emulator to log into the school server (flip).  
+Type ls to list the contents of the directory you're in.  
+Type ls -l for more information about each file.  
+Create a new directory called "week1" by typing mkdir week1.  
+Go into that directory by typing cd week1 (you can get back out of it by typing cd .. which moves you up one level from your current directory).  
+Use vim (or emacs or nano) to make a file named animal.cpp.
+Write a program that asks the user for their favorite animal and prints it to console.
+
+Project 1.b
+Write a program that calculates how much a garden center needs to spend for a flower garden display.  
+The program should prompt the user to enter the cost of the soil, the flower seeds, and the fence.  
+It should then calculate and display the total cost.  Format the output to show two decimal places.
+Name your program gardenCenter.cpp.
