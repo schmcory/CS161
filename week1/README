@@ -11,4 +11,4 @@ Project 1.b
 Write a program that calculates how much a garden center needs to spend for a flower garden display.  
 The program should prompt the user to enter the cost of the soil, the flower seeds, and the fence.  
 It should then calculate and display the total cost.  Format the output to show two decimal places.
-Name your program gardenCenter.cpp.
+Name your program gardenCost.cpp.
