@@ -1,7 +1,9 @@
 #include <iostream>
 #include <stdint.h>
+#include <iomanip>
 
-void inputValidation(int);
+//function prototype
+int inputValidation(double &input);
 
 // a simple example program
 int main()
@@ -20,10 +22,7 @@ int main()
     	std::cin >> soilCost;
 
     	//input validation
-    	while(std::cin.fail()) {
-   			inputValidation(soilCost);
-   			std::cin >> soilCost;
-    	}
+   		inputValidation(soilCost);
 
     	//Asks user for cost of flower seeds
     	std::cout << "What do the flower seeds cost?" << std::endl;
@@ -31,10 +30,7 @@ int main()
     	std::cin >> flowerSeedsCost;
 
     	//input validation
-    	while(std::cin.fail()) {
-    		inputValidation(flowerSeedsCost);
-     		std::cin >> flowerSeedsCost;   		
-    	}
+    	inputValidation(flowerSeedsCost);  		
 
     	//Asks user for cost of fence
    		std::cout << "What does the fence cost?" << std::endl;
@@ -42,10 +38,7 @@ int main()
     	std::cin >> fenceCost;
 
     	//input validation
-    	while(std::cin.fail()) {
-    		inputValidation(fenceCost); 
-     		std::cin >> fenceCost;
-    	}   
+    	inputValidation(fenceCost); 
 
     //test input
     //std::cout << "soil cost: $" << soilCost << " flower seeds cost: $" << flowerSeedsCost << " fence cost: $" << fenceCost << std::endl;	   
@@ -53,19 +46,21 @@ int main()
     //calculates the total cost
     totalCost = soilCost + flowerSeedsCost + fenceCost; 
 
-    //prints total cost
-    std::cout << "The total cost of the garden center is $" << totalCost << "." << std::endl;
+    //prints total cost with two decimal places
+    std::cout << "The total cost of your garden center is $" << std::setprecision(2) << std::fixed << totalCost << "." << std::endl;
     
     //terminates program
     return 0;
 }
 
-void inputValidation(int input) {
-    	if(std::cin.fail()) {
+//input validation function
+int inputValidation(double &input) {
+    	while(std::cin.fail()) {
     		std::cout << "Please only enter a number." << std::endl;
     		std::cin.clear();
     		std::cin.ignore();
     		std::cout << "$"; 
+    		std::cin >> input;
     	}
-    	return;
+    	return input;
 }
