@@ -6,30 +6,31 @@
 int main() {
 	int numGuess; 
 	int playerGuess;
+	int numTries;
+	int j;
 
 	std::cout << "Enter the number for the player to guess." << std::endl;
 	std::cin >> numGuess; 
 
 	std::cout << "Enter your guess." << std::endl;
-	std::cin >> playerGuess; 
 
-	while(numGuess != playerGuess) {
-		for(int i = 0; i++) {
-			if(numGuess > playerGuess) {
-				std::cout << "Too high - try again." << std::endl;
-			}
+	for(numTries = 1; ; numTries++) {
+		std::cin >> playerGuess;
 
-			else if(numGuess < playerGuess) {
-				std::cout << "Too low - try again." << std::endl;
-			}
+		if(numGuess < playerGuess) {
+			std::cout << "Too high - try again." << std::endl;
+		}
 
-			numTries = i;
+		else if(numGuess > playerGuess) {
+			std::cout << "Too low - try again." << std::endl;
+		}
+
+		else if(playerGuess == numGuess) {
+			std::cout << "You guessed it in " << numTries << " tries." << std::endl;
+			break;
 		}
 	}
 
-	if(playerGuess == numGuess) {
-		std::cout << "You guessed it in " << numTries << " tries." << std::endl;
-	}
 
 	return 0;
 }
